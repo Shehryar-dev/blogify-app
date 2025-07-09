@@ -1,3 +1,4 @@
+import { error } from 'console';
 import crypto, { createHmac, randomBytes } from 'crypto';
 import { Schema, model } from "mongoose";
 
@@ -43,6 +44,23 @@ userSchema.pre('save', function (next){
     this.password = hashPassword;
 
     next();
+});
+
+
+userSchema.static('matchPassword', async function(email, password){
+ 
+    const user = await this.findOne({email});
+
+    if(!user) throw new Error('User not found!');
+    const salt = user.salt;
+    const hashPassword = user.password;
+    const userHashPassword = createHmac('sha256', salt)
+    .update(user.password)
+    .digest("hex");
+
+    if(hashPassword !== userHashPassword) throw new Error("Incorrect Password");
+    return user;
+
 })
 
 export const UserModel = model('users', userSchema);
