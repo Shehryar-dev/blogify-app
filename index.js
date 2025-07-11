@@ -11,7 +11,7 @@ import { StaticRouter } from "./routes/static_routes.js";
 const app = express();
 const PORT = 3002;
 
-connectToMongodb('mongodb://localhost:27017/bloggin-app').then(()=> console.log('Mongodb Connected'));
+connectToMongodb('mongodb://localhost:27017/blogging-app').then(()=> console.log('Mongodb Connected'));
 
 
 app.set('view engine', 'ejs');

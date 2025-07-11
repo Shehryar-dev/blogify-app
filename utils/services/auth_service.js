@@ -1,28 +1,27 @@
-import jwt from 'jsonwebtoken'
+import jwt from "jsonwebtoken";
 
- //secret created
- const SECRET_KEY="21r5OXiKuOysJnvJiswmNr9mfKbn6809ecRUj";
+//secret created
+const SECRET_KEY = "21r5OXiKuOysJnvJiswmNr9mfKbn6809ecRUj";
 
+//token sign for user
+export  function createTokenForUser(user) {
+  //payload created
+  const payload = {
+    _id: user._id,
+    email: user.email,
+    profileImgUrl: user.profileImgUrl,
+    role: user.role,
+  };
 
- //token sign for user
-export function createTokenForUser(user){
-    //payload created
-    const payload = {
-        _id: user._id,
-        email: user.email,
-        profileImgUrl: user.profileImgUrl,
-        role: user.role
-    };
+  //token signing
+  const token = jwt.sign(payload, SECRET_KEY);
 
-    //token signing
-    const token = jwt.sign(payload, SECRET_KEY );
-
-    //return token
-    return token;
+  //return token
+  return token;
 }
 
 ///varify token
-export function validationToken(token){
-    const payload = jwt.verify(token, SECRET_KEY);
-    return payload;
+export function validationToken(token) {
+  const payload = jwt.verify(token, SECRET_KEY);
+  return payload;
 }

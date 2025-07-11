@@ -17,9 +17,9 @@ export async function SignupHandle(req, resp) {
 export async function SigninHandle(req, res) {
   const { email, password } = req.body;
 
-  const user = await UserModel.matchPassword(email, password);
+  const token = await UserModel.matchPasswordAndGenerateToken(email, password);
 
-  console.log("User", user);
+  console.log("Token:", token);
 
-  return res.redirect("/");
+  return res.cookie('token', token).redirect("/");
 }
