@@ -16,10 +16,16 @@ export async function SignupHandle(req, resp) {
 
 export async function SigninHandle(req, res) {
   const { email, password } = req.body;
-
-  const token = await UserModel.matchPasswordAndGenerateToken(email, password);
-
-  console.log("Token:", token);
-
-  return res.cookie('token', token).redirect("/");
+  try {
+    const token = await UserModel.matchPasswordAndGenerateToken(
+      email,
+      password
+    );
+    console.log("Token:", token);
+    return res.cookie("token", token).redirect("/");
+  } catch (err) {
+    return res.render('signin', {
+      error: "Incorrect Email or Password"
+    })
+  }
 }
