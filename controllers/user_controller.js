@@ -17,7 +17,7 @@ export async function SignupHandle(req, resp) {
 export async function SigninHandle(req, res) {
   const { email, password } = req.body;
 
-  const user = UserModel.matchPassword(email, password);
+  const user = await UserModel.matchPassword(email, password);
 
   console.log("User", user);
 
