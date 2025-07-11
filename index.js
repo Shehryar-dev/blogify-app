@@ -5,6 +5,9 @@ import connectToMongodb from "./config/config.js";
 import {UserRouter} from "./routes/user_routes.js";
 import { StaticRouter } from "./routes/static_routes.js";
 
+
+
+
 const app = express();
 const PORT = 3002;
 
