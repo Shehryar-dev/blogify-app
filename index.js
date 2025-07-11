@@ -13,6 +13,7 @@ connectToMongodb('mongodb://localhost:27017/bloggin-app').then(()=> console.log(
 
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./views'));
+app.use(express.static('public'));
 
 
 
