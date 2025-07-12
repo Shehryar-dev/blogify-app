@@ -4,12 +4,15 @@ export function HomeRender(req, res){
     })
 }
 
-
 export function SignInRender(req, res){
     return res.render('signin')
 }
 
-
 export function SignUpRender(req, res){
     return res.render('signup')
+}
+
+
+export function AddBlog(req, res){
+    return res.render('addblog');
 }

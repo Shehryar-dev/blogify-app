@@ -34,9 +34,6 @@ app.use('/user', UserRouter);
 app.use('/', StaticRouter);
 
 
-
-
-
 app.listen(PORT, ()=>{
     console.log(`Server Started at PORT:${PORT}`);
 });
