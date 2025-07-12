@@ -1,9 +1,29 @@
 <!-- Navbar -->
-  <nav class="bg-gray-800 px-6 py-4 flex justify-between items-center shadow-md">
-    <h1 class="text-2xl font-bold text-white">📝 Blogify</h1>
-    <ul class="flex space-x-4">
-      <li><a href="/" class="hover:underline">Home</a></li>
-      <li><a href="/login" class="hover:underline">Login</a></li>
-      <li><a href="/signup" class="hover:underline">Signup</a></li>
-    </ul>
-  </nav>
+<nav class="bg-gray-900 text-white px-6 py-4 flex justify-between items-center shadow-lg">
+  <h1 class="text-2xl font-bold text-indigo-400">📝 Blogify</h1>
+
+  <ul class="flex space-x-6 items-center">
+    <li><a href="/" class="hover:text-indigo-400 transition">Home</a></li>
+
+    <% if (locals.user) { %>
+      <li><a href="/addblog" class="hover:text-indigo-400 transition">Add Blog</a></li>
+      <li><a href="/showblogs" class="hover:text-indigo-400 transition">Show Blogs</a></li>
+
+      <!-- User Dropdown -->
+      <div class="relative group">
+        <button class="bg-gray-800 px-4 py-2 rounded hover:bg-gray-700 transition">
+          <%= user.fullName %> ⬇
+        </button>
+        <div class="absolute right-0 hidden group-hover:block bg-gray-800 mt-2 py-2 w-48 rounded shadow-lg z-50">
+          <p class="px-4 py-2 text-sm text-gray-300 border-b border-gray-600"><%= user.email %></p>
+          <form action="/logout" method="POST">
+            <button type="submit" class="block w-full text-left px-4 py-2 hover:bg-gray-700 text-red-400">Logout</button>
+          </form>
+        </div>
+      </div>
+    <% } else { %>
+      <li><a href="/login" class="hover:text-indigo-400 transition">Login</a></li>
+      <li><a href="/signup" class="hover:text-indigo-400 transition">Signup</a></li>
+    <% } %>
+  </ul>
+</nav>

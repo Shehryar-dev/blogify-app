@@ -8,6 +8,7 @@ export  function createTokenForUser(user) {
   //payload created
   const payload = {
     _id: user._id,
+    fullName:user.fullName,
     email: user.email,
     profileImgUrl: user.profileImgUrl,
     role: user.role,

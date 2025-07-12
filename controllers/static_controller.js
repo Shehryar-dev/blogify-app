@@ -1,5 +1,7 @@
 export function HomeRender(req, res){
-    return res.render('home')
+    return res.render('home', {
+        user: req.user
+    })
 }
 
 
