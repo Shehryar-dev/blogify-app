@@ -16,9 +16,7 @@
         </button>
         <div class="absolute right-0 hidden group-hover:block bg-gray-800 mt-2 py-2 w-48 rounded shadow-lg z-50">
           <p class="px-4 py-2 text-sm text-gray-300 border-b border-gray-600"><%= user.email %></p>
-          <form action="/logout" method="POST">
-            <button type="submit" class="block w-full text-left px-4 py-2 hover:bg-gray-700 text-red-400">Logout</button>
-          </form>
+            <a class="block w-full text-left px-4 py-2 hover:bg-gray-700 text-red-400" href="/user/logout">Logout</a>
         </div>
       </div>
     <% } else { %>

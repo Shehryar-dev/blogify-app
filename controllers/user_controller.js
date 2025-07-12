@@ -29,3 +29,7 @@ export async function SigninHandle(req, res) {
     })
   }
 }
+
+export function LogoutHandler(req, res){
+   res.clearCookie('token').redirect("/");
+}
