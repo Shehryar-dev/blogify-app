@@ -1,3 +1,4 @@
+import { Blog } from "../models/blog_model.js";
 export function HomeRender(req, res){
     return res.render('home', {
         user: req.user
@@ -15,4 +16,13 @@ export function SignUpRender(req, res){
 
 export function AddBlog(req, res){
     return res.render('addblog');
+}
+
+
+export async function ShowBlog(req, res){
+    const blogs = await Blog.find({});
+    return res.render('showblog',{
+        blogs:blogs,
+        user:req.user
+    });
 }
