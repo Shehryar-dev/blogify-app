@@ -11,7 +11,7 @@ export async function SignupHandle(req, resp) {
     password,
   });
 
-  return resp.redirect("/");
+  return resp.redirect("/signin");
 }
 
 export async function SigninHandle(req, res) {

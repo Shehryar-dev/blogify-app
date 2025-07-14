@@ -1,5 +1,4 @@
 import  { Router } from "express";
-import {UserModel} from "../models/user_model.js";
 import {LogoutHandler, SigninHandle, SignupHandle} from '../controllers/user_controller.js'
 const router = Router();
 

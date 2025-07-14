@@ -1,5 +1,4 @@
-import { error } from 'console';
-import crypto, { createHmac, randomBytes } from 'crypto';
+import { createHmac, randomBytes } from 'crypto';
 import { Schema, model } from "mongoose";
 import  {createTokenForUser}  from '../utils/services/auth_service.js';
 
@@ -65,6 +64,6 @@ userSchema.static('matchPasswordAndGenerateToken', async function(email, passwor
 
     return token;
 
-})
+});
 
 export const UserModel = model('users', userSchema);
