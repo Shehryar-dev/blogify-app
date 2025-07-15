@@ -22,4 +22,4 @@ const CommentSchema = Schema(
   { timestamps: true }
 );
 
-export const Comments = model('comments', CommentSchema);
+export const CommentModel = model('comments', CommentSchema);
