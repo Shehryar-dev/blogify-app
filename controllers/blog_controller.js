@@ -1,7 +1,8 @@
-import { response } from "express";
 import { Blog } from "../models/blog_model.js";
 import { CommentModel } from "../models/comment_model.js";
 
+
+//Insert Blog
 export async function InsertBlog(req, res) {
   const title = req.body.title ?? "";
   const body = req.body.body;
@@ -17,6 +18,8 @@ export async function InsertBlog(req, res) {
   return res.status(201).redirect("/showblog");
 }
 
+
+//Fetch All Blog
 export async function FatchAllBlog(req, res) {
   const blogs = await Blog.find({}).populate("createdBy");
   return res
@@ -25,6 +28,8 @@ export async function FatchAllBlog(req, res) {
     .render("showblog", { blogs, user: req.user });
 }
 
+
+//Show full blog
 export async function ShowFullBlog(req, res) {
   const blogId = req.params.id;
 
@@ -49,6 +54,8 @@ console.log('comment', comment)
 }
 
 
+
+//Comment Handling
 export async function CommentHandleasync(req, res) {
   await CommentModel.create({
     comment: req.body.comment,

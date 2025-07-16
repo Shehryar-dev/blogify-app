@@ -1,14 +1,17 @@
 import jwt from "jsonwebtoken";
-
+import { config } from "dotenv";
+config();
 //secret created
-const SECRET_KEY = "21r5OXiKuOysJnvJiswmNr9mfKbn6809ecRUj";
+const SECRET_KEY = process.env.SECRET_KEY;
+
+console.log(SECRET_KEY);
 
 //token sign for user
-export  function createTokenForUser(user) {
+export function createTokenForUser(user) {
   //payload created
   const payload = {
     _id: user._id,
-    fullName:user.fullName,
+    fullName: user.fullName,
     email: user.email,
     profileImgUrl: user.profileImgUrl,
     role: user.role,
