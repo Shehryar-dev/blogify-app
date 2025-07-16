@@ -45,9 +45,11 @@
     </div>
 
     <!-- Comment Section -->
+    <!-- Comment Section -->
     <section>
       <h2 class="text-2xl font-semibold mb-4">Comments</h2>
-      <% if(locals.user){ %>
+
+      <% if (locals.user) { %>
       <!-- Comment Form -->
       <form
         action="/blog/comment/<%= singleBlog._id %>"
@@ -69,13 +71,35 @@
         </button>
       </form>
       <% } %>
-      <!-- Comment List (dummy for now) -->
+
+      <!-- Comment List -->
       <div class="space-y-4">
+        <% if (locals.length === 0) { %>
         <div class="bg-gray-800 p-4 rounded-lg">
           <p class="text-sm text-gray-300">
             No comments yet. Be the first to comment!
           </p>
         </div>
+        <% } else { %> <% comment.forEach((cmt) => { %>
+        <div class="bg-gray-800 p-4 rounded-lg">
+          <div class="flex items-center gap-4 mb-2">
+            <img
+              src="/<%= cmt.createdBy.profileImgUrl || '/user-1.webp' %>"
+              alt="Profile"
+              class="w-10 h-10 rounded-full"
+            />
+            <div>
+              <p class="text-white font-semibold">
+                <%= cmt.createdBy.fullName %>
+              </p>
+              <p class="text-gray-400 text-xs">
+                <%= cmt.createdAt.toDateString() %>
+              </p>
+            </div>
+          </div>
+          <p class="text-gray-300 p-1"><%= cmt.comment %></p>
+        </div>
+        <% }) %> <% } %>
       </div>
     </section>
   </section>

@@ -1,5 +1,6 @@
 import { response } from "express";
 import { Blog } from "../models/blog_model.js";
+import { CommentModel } from "../models/comment_model.js";
 
 export async function InsertBlog(req, res) {
   const title = req.body.title ?? "";
@@ -26,18 +27,34 @@ export async function FatchAllBlog(req, res) {
 
 export async function ShowFullBlog(req, res) {
   const blogId = req.params.id;
-  const singleBlog = await Blog.findById(blogId).populate("createdBy").then((response)=>{
-    return response;
-  }).catch((err)=>{
-    console.log('error:',err);
-  });
-  const blogs = await Blog.find({});
-  console.log(req.user)
+
+  try {
+    const singleBlog = await Blog.findById(blogId).populate("createdBy");
+    const blogs = await Blog.find({});
+
+    const comment = await CommentModel.find({ blog: blogId }).populate("createdBy");
+
+console.log('comment', comment)
+
+    return res.render("showfullblog", {
+      user: req.user, // for navbar + comment form
+      singleBlog,
+      blogs, // latest blogs on sidebar
+      comment, // all comments on this blog
+    });
+  } catch (err) {
+    console.log("error:", err);
+    return res.status(500).send("Internal Server Error");
+  }
+}
 
 
-  return res.render("showfullblog", {
-    user:req.user,
-    singleBlog,
-    blogs,
+export async function CommentHandleasync(req, res) {
+  await CommentModel.create({
+    comment: req.body.comment,
+    blog: req.params.blogId,
+    createdBy: req.user._id,
   });
+
+  return res.redirect(`/blog/${req.params.blogId}`);
 }
