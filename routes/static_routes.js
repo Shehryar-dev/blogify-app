@@ -4,7 +4,7 @@ import { AddBlog,  HomeRender, SignInRender, SignUpRender, ShowBlog } from "../c
 const router = Router();
 
 router.get('/', HomeRender);
-router.get('/login', SignInRender);
+router.get('/signin', SignInRender);
 router.get('/signup', SignUpRender);
 router.get('/addblog', AddBlog);
 router.get('/showblog', ShowBlog);
