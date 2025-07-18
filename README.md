@@ -49,7 +49,7 @@
 
 ## 📁 Project Structure
 ```
-📂 blogify-app/
+📂 blogify-app
 ├──📂 controllers/
 ├──📂 middlewares/
 ├──📂 models/
