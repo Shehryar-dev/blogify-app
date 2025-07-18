@@ -48,23 +48,23 @@
 ---
 
 ## 📁 Project Structure
-
-blogify-app/
-├── controllers/
-├── middlewares/
-├── models/
-├── public/
-│ └── screenshots/
-├── routes/
-├── utils/
-├── views/
+```
+📂 blogify-app/
+├──📂 controllers/
+├──📂 middlewares/
+├──📂 models/
+├──📂 public/
+│ └──📂 screenshots/
+├──📂 routes/
+├──📂 utils/
+├──📂 views/
 │ └── ejs files
 ├── .env
 ├── .gitignore
 ├── README.md
 ├── package.json
 └── index.js
-
+```
 
 ---
 
