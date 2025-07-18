@@ -18,7 +18,7 @@ connectToMongodb(process.env.DB_STR).then(()=> console.log('Mongodb Connected'))
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./views'));
 app.use(express.static('public'));
-
+gi
 
 
 app.use(express.urlencoded({extended:true}));

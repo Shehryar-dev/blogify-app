@@ -98,11 +98,14 @@ blogify-app/
 ### 🏠 Home (All Blogs)
 ![Home Page](./public/screenshots/home.png)
 
+### 📄 All Blog Page
+![Show Blog Page](./public/screenshots/show-all-blog.png)
+
 ### 📄 Full Blog Page
-![Show Blog Page](./public/screenshots/showblog.png)
+![Show Blog Page](./public/screenshots/show-single-blog.png)
 
 ### ✍️ Add Blog
-![Add Blog](./public/screenshots/addblog.png)
+![Add Blog](./public/screenshots/add.png)
 
 ---
 
