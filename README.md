@@ -23,6 +23,17 @@
 
 ## 📁 Project Structure
 
+## 🔧 Tech Stack
+
+- **Backend:** Node.js, Express.js, MongoDB, Mongoose
+- **Frontend:** EJS, Tailwind CSS
+- **Auth:** JWT (JSON Web Token)
+- **Image Upload:** Multer
+- **Other Tools:** dotenv, cookie-parser
+
+---
+
+## 📁 Project Structure
 
 ## 🔧 Tech Stack
 
@@ -36,18 +47,6 @@
 
 ## 📁 Project Structure
 
-
-## 🔧 Tech Stack
-
-- **Backend:** Node.js, Express.js, MongoDB, Mongoose
-- **Frontend:** EJS, Tailwind CSS
-- **Auth:** JWT (JSON Web Token)
-- **Image Upload:** Multer
-- **Other Tools:** dotenv, cookie-parser
-
----
-
-## 📁 Project Structure
 ```
 📂 blogify-app
 ├──📂 controllers/
@@ -90,29 +89,63 @@
 ## 🖼️ Screenshots
 
 ### 🔒 Login Page
+
 ![Login Page](./public/screenshots/login.png)
 
 ### 🆕 Signup Page
+
 ![Signup Page](./public/screenshots/signup.png)
 
 ### 🏠 Home (All Blogs)
+
 ![Home Page](./public/screenshots/home.png)
 
 ### 📄 All Blog Page
+
 ![Show Blog Page](./public/screenshots/show-all-blog.png)
 
 ### 📄 Full Blog Page
+
 ![Show Blog Page](./public/screenshots/show-single-blog.png)
 
 ### ✍️ Add Blog
+
 ![Add Blog](./public/screenshots/add.png)
 
 ---
 
-## 🚀 How to Run
+## 🚀 Installation
 
-```bash
-git clone https://github.com/Shehryar-dev/blogify-app.git
-cd blogify-app
-npm install
-npm start
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Shehryar-dev/blogify-app.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd blogify-app
+   ```
+3. Install dependencies:
+   ```sh
+   npm i
+   ```
+4. Run the app:
+   ```sh
+   npm run dev
+   ```
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+⭐ **Star this repository if you like the project!** 🚀
+
+---
+
+## 💼 Connect
+
+- **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/shehryarkhandiv)
+- **GitHub**: [GitHub](https://github.com/Shehryar-dev)
+- **Twitter**: [X Account](https://x.com/Morphues_S)
+- **Portfolio**: [Portfolio](https://shehriyar-portfolio-v2.netlify.app/)
